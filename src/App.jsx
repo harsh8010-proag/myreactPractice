@@ -8,6 +8,7 @@ import Colorpicker from "./colorpicker";
 import MyComponent from "./Company";
 import Flist from "./frutList";
 import MyCcomponent from "./Cars";
+import ToDoList from "./ToDoList";
 
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
 
   return (
     
-    <div className="bg-gradient-to-br from-purple-950  to-blue-700">
+    <div className="bg-gradient-to-br from-purple-950  to-blue-700 p-4">
+      <ToDoList/>
       <MyCcomponent/>
       <Flist/>
       <MyComponent/>
