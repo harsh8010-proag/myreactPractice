@@ -1,4 +1,4 @@
-import { list } from "postcss";
+ 
 import { useState } from "react";
 
 function MyCcomponent(){
@@ -15,9 +15,13 @@ function MyCcomponent(){
         };
 
         setCars(c => [...c,newCar])
+
+        setCarYear(new Date().getFullYear());
+        setCarsMake("");
+        setCarModel("");
     }
     function handleRemoveCar(idx){
-        {cars.filter((element,i)=> i!==idx )}
+        setCars(cars.filter((element,i)=> i!==idx ));
     }
     function handleYearChange(e){
         setCarYear(e.target.value);
@@ -32,7 +36,7 @@ return(
     <div>
         <h2>List of Car Object</h2>
         <ul >
-        {cars.map((car,idx)=><li key={idx} onClick={handleRemoveCar(idx)}>{car.year} {car.make} {car.model} </li>)}
+        {cars.map((car,idx)=><li key={idx} onClick={()=>handleRemoveCar(idx)}>{car.year} {car.make} {car.model} </li>)}
         </ul>
     <input className="mx-4 p-2 bg-cyan-400 border-none outline-none text-[16px] text-purple-800 rounded-[5px] hover:bg-cyan-300" 
            value={carYear}
