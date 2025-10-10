@@ -9,7 +9,9 @@ function Flist(){
     function handelAddFood(e){
         const newFood=document.getElementById("foodInput").value;
         document.getElementById("foodInput").value="";
-       setFoods(f => [...f,newFood]);
+
+        if(newFood.trim() !==""){
+       setFoods(f => [...f,newFood]);}
 
 
     //    setFoods(foods.push=newFood)

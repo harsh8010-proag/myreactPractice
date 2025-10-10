@@ -10,52 +10,56 @@
    setNewTask(e.target.value);
    
    }
-function handleKeyDown(e) {
-    if (e.key === "Enter") {
+function handleKeyDown(e){
+
+    if (e.key === "Enter"){
       addTasks(e);
     }
+
   }
-   function addTasks(e){
+   
+  function addTasks(e){
        e.currentTarget.blur();
        if(newTask.trim() !==""){
        setTasks([...tasks,newTask]);
-       setNewTask("");}
-   }
+       setNewTask("");
+      }
+   }  
 
-   function deleteTask(e,idx){
-     e.currentTarget.blur();
-     const updatedTasks=tasks.filter( (_,i) => i !== idx);
-     setTasks(updatedTasks);
-   }
+   function deleteTask(e,idx){  
+     e.currentTarget.blur();  
+     const updatedTasks=tasks.filter( (_,i) => i !== idx);  
+     setTasks(updatedTasks);  
+   }  
 
-   function moveTaskUp(e,idx){
-    e.currentTarget.blur();
-    if(idx > 0){
-      const updatedTasks=[...tasks];
-      [updatedTasks[idx],updatedTasks[idx-1]]=[updatedTasks[idx-1],updatedTasks[idx]]
+   function moveTaskUp(e,idx){  
+    e.currentTarget.blur();  
+    if(idx > 0){  
+      const updatedTasks=[...tasks];  
+      [updatedTasks[idx],updatedTasks[idx-1]]=[updatedTasks[idx-1],updatedTasks[idx]]  
 
-    setTasks(updatedTasks)
+    setTasks(updatedTasks);  
     } 
    } 
 
    function moveTaskDown(e,idx){
     e.currentTarget.blur();
     if(idx < tasks.length-1){ 
-      const updatedTasks=[...tasks];
+      const updatedTasks=[...tasks]; 
       [updatedTasks[idx],updatedTasks[idx+1]] 
        =  
-      [updatedTasks[idx+1],updatedTasks[idx]]
+      [updatedTasks[idx+1],updatedTasks[idx]] 
 
-      setTasks(updatedTasks)
-    }
-   }
-   return(
-     <div className="w-[500px] bg-cyan-500 p-5 flex flex-col items-center">
-        <h1 className="font text-[24px] leading-relaxed">To-Do-List</h1>
+      setTasks(updatedTasks) 
+    }  
+   } 
+   return( 
+     <div className="w-[500px] bg-gradient-to-tl from-purple-950 to-blue-950 rounded-[10px] p-5 flex flex-col items-center text-gradient-to-tl border-1 border-purple-500 shadow-sm shadow-purple-500 m-5">
+        <h1 className="font text-[24px] leading-relaxed bg-gradient-to-r from-purple-200 to-cyan-200 bg-clip-text text-transparent ">To-Do-List</h1>
         <div>
         <input 
         type="text"  
-        className="border-2 p-1 m-4 outline-none"
+        className="border-2 p-1 m-4 outline-none border-cyan-500 shadow-sm shadow-cyan-700/90 "
         value={newTask}
         onChange={(e)=>handleInputChange(e)}
         onKeyDown={handleKeyDown}
@@ -65,19 +69,19 @@ function handleKeyDown(e) {
         className="px-6 py-2 rounded-[5px] bg-gradient-to-bl from-blue-500 to-purple-500 focus:scale-92">Add</button>
         </div>
         <ol>
-          {tasks.map((task,idx)=><li key={idx}
-          className=" bg-gradient-to-l from-blue-900/90 to-purple-900  p-4 rounded-[5px] m-2">
+          {tasks.map((task,idx)=><li key={idx} 
+          className="bg-gradient-to-l from-blue-900/90 to-purple-900  p-4 rounded-[5px] m-2 border-1 border-purple-500 shadow-sm shadow-purple-700">
             <span className="text-[17px]">
               {task}
             </span>
             <button
-             className="p-2 px-4 m-2 rounded-[4px] bg-gradient-to-tr from-red-400 to-red-600 hover:bg-none bg-red-600 focus:scale-92"
+            className="shadow-md shadow-red-500 p-2 px-4 m-2 rounded-[4px] bg-gradient-to-tr from-red-400 to-red-600 hover:bg-none bg-red-600 focus:scale-92"
              onClick={(e)=>deleteTask(e,idx)}
              >delete</button>
-             <button className="m-2 text-[20px] bg-gradient-to-br from-green-400 to-green-600 p-1 px-2 rounded-[5px] shadow-2xl shadow-green-500 hover:bg-none bg-green-600 focus:bg-green-700 focus:outline-none focus:scale-92"
+             <button className="m-2 text-[20px] bg-gradient-to-br from-green-400 to-green-600 p-1 px-2 rounded-[5px] shadow-2xl shadow-md shadow-green-500 hover:bg-none bg-green-600 focus:bg-green-700 focus:outline-none focus:scale-92"
              
                onClick={(e) => moveTaskUp(e,idx)}>👆</button>
-               <button className="text-[20px] bg-gradient-to-tr from-red-600 to-yellow-500  p-1 px-2 rounded-[5px] shadow-lg shadow-yellow-500 hover:bg-none bg-orange-600 focus:bg-red-500 focus:outline-none focus:scale-92"
+               <button className="text-[20px] bg-gradient-to-tr from-red-600 to-yellow-500  p-1 px-2 rounded-[5px] shadow-md shadow-yellow-500 hover:bg-none bg-orange-600 focus:bg-red-500 focus:outline-none focus:scale-92"
                onClick={(e) => moveTaskDown(e,idx)}>👇</button>
             
           </li>)}
