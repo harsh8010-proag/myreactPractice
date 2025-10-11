@@ -23,12 +23,12 @@ function formation(){
 
     hours = hours % 12 || 12 ;
 
-    return `${hours} :${minutes}:${seconds} ${maridiem}` ;
+    return `${padZero(hours)} :${padZero(minutes)}:${padZero(seconds)} ${maridiem}` ;
 }
 
-
-
-
+function padZero(number){
+    return (number < 10 ? "0" :"")+number;
+}
     return(
         
     <div 
