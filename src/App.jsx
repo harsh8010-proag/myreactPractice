@@ -11,6 +11,7 @@ import MyCcomponent from "./Cars";
 import ToDoList from "./ToDoList";
 import MyUse from "./Use";
 import UseE from "./UseE"
+import Digitalclock from "./Clock";
 
 function App() {
   const ArambhGroup=[{id:1,name:"harish",weigth:50},
@@ -27,6 +28,7 @@ function App() {
   return (
     
     <div className="bg-gradient-to-br from-purple-950  to-blue-700 p-4">
+      <Digitalclock/>
       <UseE/>
       <MyUse/>
       <ToDoList/>

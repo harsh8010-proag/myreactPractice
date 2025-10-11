@@ -4,14 +4,14 @@ function MyUse(){
     const [count,setCount] =useState(0);
     const [color,setColor] =useState('green');
 
-    useEffect(()=>{
-        document.title=`Count: ${count} ${color}`;
+    // useEffect(()=>{
+    //     document.title=`Count: ${count} ${color}`;
 
-        return()=>{
-            //sume clenup code
-        }
+    //     return()=>{
+    //         //sume clenup code
+    //     }
 
-    },[count,color ])
+    // },[count,color ])
 
     const addCount=()=>{
         setCount(c=>c+1);
