@@ -23,11 +23,11 @@ function formation(){
 
     hours = hours % 12 || 12 ;
 
-    return `${padZero(hours)} :${padZero(minutes)}:${padZero(seconds)} ${maridiem}` ;
+    return `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)} ${maridiem}` ;
 }
 
 function padZero(number){
-    return (number < 10 ? "0" :"")+number;
+    return (number < 10 ? "" :"")+number;
 }
     return(
         
@@ -38,7 +38,7 @@ function padZero(number){
 }}
     className="h-[100px] w-[500px] flex justify-start items-center">
     <div>
-    <span className="ml-10 text-[30px]">{formation()}</span>
+    <span className="ml-10 text-[30px]">{formation()}</span> 
     </div>       
     </div>
         

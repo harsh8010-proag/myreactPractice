@@ -13,7 +13,9 @@ import MyUse from "./Use";
 import UseE from "./UseE"
 import Digitalclock from "./Clock";
 import ComponantA from "./ComponantA";
-import Useref from "./UseRef";
+import UseF from "./UseF";
+import Stop from "./Stop";
+// import Useref from "./UseRef";
 
 
 function App() {
@@ -31,10 +33,11 @@ function App() {
   return (
     
     <div className="bg-gradient-to-br from-purple-950  to-blue-700 p-4">
-      <Useref/>
+      <Stop/>
+      <UseF/>
       <ComponantA/>
       <Digitalclock/>
-      <UseE/>
+      {/* <UseE/> */}
       <MyUse/>
       <ToDoList/>
       <MyCcomponent/>
