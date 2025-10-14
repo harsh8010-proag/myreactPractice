@@ -39,7 +39,7 @@ useEffect(() =>{
   function formatTime(){
   let houers =Math.floor(elapsedTime/(1000 * 60 * 60))
   let minutes =Math.floor(elapsedTime/(1000 * 60) % 60)
-  let seconds =Math.floor(elapsedTime /(1000) % 10);
+  let seconds =Math.floor(elapsedTime /(1000) % 60);
   let millisecond= Math.floor( (elapsedTime % 1000)/10)
 
   houers=String(houers).padStart(2,'0');
